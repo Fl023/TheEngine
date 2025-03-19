@@ -1,0 +1,9 @@
+[submodule "TheEngine/vendor/spdlog"]
+	path = TheEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "TheEngine/vendor/GLFW"]
+	path = TheEngine/vendor/GLFW
+	url = https://github.com/Fl023/glfw
+[submodule "TheEngine/vendor/imgui"]
+	path = TheEngine/vendor/imgui
+	url = https://github.com/Fl023/imgui
