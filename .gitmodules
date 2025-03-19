@@ -4,9 +4,6 @@
 [submodule "TheEngine/vendor/GLFW"]
 	path = TheEngine/vendor/GLFW
 	url = https://github.com/Fl023/glfw
-[submodule "TheEngine/vendor/imgui"]
-	path = TheEngine/vendor/imgui
-	url = https://github.com/Fl023/imgui
 [submodule "TheEngine/vendor/glm"]
 	path = TheEngine/vendor/glm
 	url = https://github.com/g-truc/glm
