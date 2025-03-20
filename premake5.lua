@@ -75,7 +75,8 @@ workspace "TheEngine"
  
  		postbuildcommands
  		{
- 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"" )
+ 			--("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
  		}
  
  	filter "configurations:Debug"
@@ -112,6 +113,7 @@ workspace "TheEngine"
  	{
  		"TheEngine/vendor/spdlog/include",
  		"TheEngine/src",
+        "TheEngine/vendor",
         "%{IncludeDir.glm}"
  	}
  
