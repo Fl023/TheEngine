@@ -8,6 +8,12 @@
 
 #include "TheEngine/ImGui/ImGuiLayer.h"
 
+#include "TheEngine/Renderer/Shader.h"
+#include "TheEngine/Renderer/Buffer.h"
+#include "TheEngine/Renderer/VertexArray.h"
+
+#include "TheEngine/Renderer/OrthographicCamera.h"
+
 
 namespace TheEngine {
 

@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef TE_PLATFORM_WINDOWS
+#if TE_DYNAMIC_LINK
 	#ifdef TE_BUILD_DLL
 		#define THEENGINE_API __declspec(dllexport)
 	#else
 		#define THEENGINE_API __declspec(dllimport)
 	#endif
+#else
+	#define THEENGINE_API
+#endif
 #else
 	#error TheEngine only supports Windows!
 #endif

@@ -1,8 +1,10 @@
 #pragma once
 
 #include "TheEngine/Window.h"
+#include "TheEngine/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+
 
 namespace TheEngine {
 
@@ -23,6 +25,8 @@ namespace TheEngine {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
+
 		struct WindowData {
 			std::string Title;
 			unsigned int Width, Height;

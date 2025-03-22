@@ -1353,6 +1353,18 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\TheEngine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\TheEngine\Renderer\Shader.h" />
+    <ClInclude Include="src\TheEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\TheEngine\Renderer\Renderer.h" />
+    <ClInclude Include="src\TheEngine\Renderer\VertexArray.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\TheEngine\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\TheEngine\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\TheEngine\Renderer\OrthographicCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
@@ -1382,5 +1394,16 @@
     <ClCompile Include="src\tepch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\TheEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="src\TheEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\TheEngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\TheEngine\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\TheEngine\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\TheEngine\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\TheEngine\Renderer\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>
