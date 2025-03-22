@@ -1,5 +1,6 @@
 workspace "TheEngine"
  	architecture "x64"
+    startproject "Sandbox"
  
  	configurations
  	{
