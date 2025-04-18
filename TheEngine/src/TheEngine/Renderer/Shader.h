@@ -1,45 +1,46 @@
 #pragma once
 
 #include <string>
+#include <unordered_map>
+
 #include <glm/glm.hpp>
 
-
-
 namespace TheEngine {
-
-    std::string get_file_contents(const char* filename);
 
     class Shader
     {
     public:
-        // Constructor that build the Shader Program from 2 different shaders
-        Shader(const char* vertexFile, const char* fragmentFile);
-        Shader(std::string& vertexFile, std::string& fragmentFile);
+        virtual ~Shader() = default;
 
-        // Activates the Shader Program
-        void Bind();
-        // Deactivates the Shader Program
-        void Unbind();
-        // Deletes the Shader Program
-        void Delete();
+        virtual void Bind() const = 0;
+        virtual void Unbind() const = 0;
 
-        void setBool(const std::string& name, bool value) const;
-        void setInt(const std::string& name, int value) const;
-        void setFloat(const std::string& name, float value) const;
-        void setVec2(const std::string& name, const glm::vec2& value) const;
-        void setVec2(const std::string& name, float x, float y) const;
-        void setVec3(const std::string& name, const glm::vec3& value) const;
-        void setVec3(const std::string& name, float x, float y, float z) const;
-        void setVec4(const std::string& name, const glm::vec4& value) const;
-        void setVec4(const std::string& name, float x, float y, float z, float w) const;
-        void setMat2(const std::string& name, const glm::mat2& mat) const;
-        void setMat3(const std::string& name, const glm::mat3& mat) const;
-        void setMat4(const std::string& name, const glm::mat4& mat) const;
+        virtual void SetInt(const std::string& name, int value) = 0;
+        virtual void SetFloat(const std::string& name, float value) = 0;
+        virtual void SetFloat3(const std::string& name, const glm::vec3& value) = 0;
+        virtual void SetFloat4(const std::string& name, const glm::vec4& value) = 0;
+        virtual void SetMat4(const std::string& name, const glm::mat4& value) = 0;
+
+
+        virtual const std::string& GetName() const = 0;
+
+        static Ref<Shader> Create(const std::string& filepath);
+        static Ref<Shader> Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
+    };
+
+    class ShaderLibrary
+    {
+    public:
+        void Add(const std::string& name, const Ref<Shader>& shader);
+        void Add(const Ref<Shader>& shader);
+        Ref<Shader> Load(const std::string& filepath);
+        Ref<Shader> Load(const std::string& name, const std::string& filepath);
+
+        Ref<Shader> Get(const std::string& name);
+
+        bool Exists(const std::string& name) const;
     private:
-        // Checks if the different Shaders have compiled properly
-        void compileErrors(unsigned int shader, const char* type);
-        // Reference ID of the Shader Program
-        uint32_t m_RendererID;
+        std::unordered_map<std::string, Ref<Shader>> m_Shaders;
     };
 
 

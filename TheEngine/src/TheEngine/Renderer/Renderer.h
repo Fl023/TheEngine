@@ -2,7 +2,7 @@
 
 #include "RenderCommand.h"
 
-#include "OrthographicCamera.h"
+#include "Camera.h"
 #include "Shader.h"
 
 namespace TheEngine {
@@ -10,10 +10,13 @@ namespace TheEngine {
 	class Renderer
 	{
 	public:
-		static void BeginScene(OrthographicCamera& camera);
+		static void Init();
+		static void OnWindowResize(uint32_t width, uint32_t height);
+
+		static void BeginScene(Camera& camera);
 		static void EndScene();
 
-		static void Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray);
+		static void Submit(const Ref<Shader>& shader, const Ref<VertexArray>& vertexArray, const glm::mat4& transform = glm::mat4(1.0f));
 
 		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 	private:
@@ -22,6 +25,6 @@ namespace TheEngine {
 			glm::mat4 ViewProjectionMatrix;
 		};
 
-		static SceneData* s_SceneData;
+		static Scope<SceneData> s_SceneData;
 	};
 }

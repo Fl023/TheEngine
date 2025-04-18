@@ -1,12 +1,10 @@
 #include "tepch.h"
 #include "RenderCommand.h"
 
-#include "RendererAPI.h"
 #include "Platform/OpenGL/OpenGLRendererAPI.h"
-
 
 namespace TheEngine {
 
-	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
+	Scope<RendererAPI> RenderCommand::s_RendererAPI = RendererAPI::Create();
 	
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "tepch.h"
-#include "TheEngine/Core.h"
+#include "TheEngine/Core/Core.h"
 
 namespace TheEngine {
 

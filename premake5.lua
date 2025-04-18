@@ -17,6 +17,8 @@ workspace "TheEngine"
  IncludeDir["Glad"] = "TheEngine/vendor/Glad/include"
  IncludeDir["ImGui"] = "TheEngine/vendor/imgui"
  IncludeDir["glm"] = "TheEngine/vendor/glm"
+ IncludeDir["stb_image"] = "TheEngine/vendor/stb_image"
+ IncludeDir["json"] = "TheEngine/vendor/json"
 
  include "TheEngine/vendor/GLFW"
  include "TheEngine/vendor/Glad"
@@ -39,6 +41,9 @@ workspace "TheEngine"
  	{
  		"%{prj.name}/src/**.h",
  		"%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/stb_image/**.h",
+        "%{prj.name}/vendor/stb_image/**.cpp",
+        "%{prj.name}/vendor/json/**.h",
         "%{prj.name}/vendor/glm/glm/**.hpp",
         "%{prj.name}/vendor/glm/glm/**.inl"
  	}
@@ -55,7 +60,9 @@ workspace "TheEngine"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ImGui}",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.stb_image}",
+        "%{IncludeDir.json}"
  	}
 
     links
@@ -115,7 +122,8 @@ workspace "TheEngine"
  		"TheEngine/vendor/spdlog/include",
  		"TheEngine/src",
         "TheEngine/vendor",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.json}"
  	}
  
  	links
