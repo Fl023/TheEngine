@@ -10,3 +10,4 @@
 [submodule "TheEngine/vendor/imgui"]
 	path = TheEngine/vendor/imgui
 	url = https://github.com/Fl023/imgui
+	branch = docking
