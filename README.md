@@ -17,7 +17,7 @@ Open a PowerShell or Command Prompt and run:
 
 ```powershell
 # Clone main repo and all submodules in one go
-git clone --recurse-submodules https://github.com/FL023/TheEngine
+git clone --recurse-submodules --remote-submodules https://github.com/FL023/TheEngine
 cd TheEngine
 ```
 
